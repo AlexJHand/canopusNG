@@ -21,5 +21,10 @@
         </li>
     </ul>
    </section>
+   <section ng-controller="ApiController as AC">
+       <input type='text' placeholder="image search" ng-model="AC.searchIn">
+    <button ng-click="AC.getImages()">Search</button>
+    <p ng-repeat="image in AC.images"><img ng-src="{{ image.images.original.url }}"></p>
+   </section>
 </body>
 </html>

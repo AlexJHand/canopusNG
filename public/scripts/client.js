@@ -26,3 +26,21 @@ myApp.controller( 'ReviewController', function( $http ){
         }); // end $http
     }; //end addBand
 }); //end review controller
+
+/// - API URL: http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=dc6zaTOxFJmzC
+
+myApp.controller( 'ApiController', function( $http ){
+    var vm = this;
+
+    vm.getImages = function(){
+        // get images from giphy
+        var searchUrl = 'http://api.giphy.com/v1/gifs/search?q=' + vm.searchIn + '&api_key=dc6zaTOxFJmzC'
+        $http({
+            method: 'GET',
+            url: searchUrl
+        }).then( function( response ){
+            console.log( 'back from API call with:', response );
+            vm.images=response.data.data;
+        }); //end $http
+    } // end getImage
+}); //end ApiController
