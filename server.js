@@ -2,10 +2,13 @@
 var express = require( 'express' );
 var app = express();
 var index  = require( './modules/routes/index' );
+var bands = require( './modules/routes/bands' );
 
 //uses
 app.use( express.static( 'public' ) );
 app.use( '/', index );
+app.use( '/bands', bands );
+
 // globals
 var port = 5318;
 
