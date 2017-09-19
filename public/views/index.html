@@ -8,7 +8,12 @@
     <script src="scripts/client.js"></script>
     <title>NG 2 Canopus</title>
 </head>
-<body>
+<body ng-app="myApp">
    <h1>NG 2 Canopus</h1> 
+   <section ng-controller="ReviewController as RC">
+    <h2>Review stuff!!!</h2>
+    <input type='text' placeholder='1 band' ng-model='RC.bandIn'>
+    <p>{{ RC.bandIn }}</p>
+   </section>
 </body>
 </html>
