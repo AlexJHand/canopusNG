@@ -10,7 +10,7 @@
 </head>
 <body ng-app="myApp">
    <h1>NG 2 Canopus</h1> 
-   <section ng-controller="ReviewController as RC">
+   <section ng-controller="ReviewController as RC" ng-init="RC.getBands()">
     <h2>Review stuff!!!</h2>
     <input type='text' placeholder='1 band' ng-model='RC.bandIn'>
     <p>{{ RC.bandIn }}</p>
